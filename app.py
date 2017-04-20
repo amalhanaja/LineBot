@@ -45,6 +45,10 @@ def handle_message(event):
                     longitude=112.714243,
                 )
                 line_bot_api.reply_message(event.reply_token, send_location)
+                ###TODO: ADD MORE ACTION
+            else:
+                text_message = TextSendMessage(text="Maaf Sekali Bossku kita belum buka cabang disana")
+                line_bot_api.reply_message(event.reply_token, text_message.messages)
     #
     # line_bot_api.reply_message(
 	# 	event.reply_token,
