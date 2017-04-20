@@ -40,8 +40,7 @@ if __name__ == "__main__":
     arg_parser.add_argument('-p', '--port', default=8000, help='port')
     arg_parser.add_argument('-d', '--debug', default=False, help='debug')
     options = arg_parser.parse_args()
-
-app.run(debug=options.debug, port=options.port)
+    app.run(debug=options.debug, port=options.port)
 # from flask import Flask, request, abort
 
 # from linebot import (
