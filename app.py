@@ -35,6 +35,16 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="Hai Juga!!!")
         )
+    if event.message.text.lower().find("lokasi") != -1:
+        line_bot_api.reply_message(
+            event.reply_token,
+            LocationSendMessage(
+                title="Kantor Pusat",
+                address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                latitude=-7.452799,
+                longitude=112.714243,
+            )
+        )
 
     # line_bot_api.reply_message(
 	# 	event.reply_token,
