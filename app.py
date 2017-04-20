@@ -32,7 +32,7 @@ def handle_message(event):
     lokasiDict = ("lokasi", "cabang", "gerai", "kantor")
     cabangDict = ("sidoarjo", "surabaya", "bangkalan", "jombang", "yogyakarta")
     print (event.message.text)
-    for pesan in event.message.text.lower():
+    for pesan in event.message.text.lower().split():
         if pesan in lokasiDict:
             text_message = TextSendMessage(text="Mau cari tahu "+ pesan + " di Kabupaten/Kota mana BossKu ?")
             line_bot_api.reply_message(event.reply_token, text_message)
