@@ -29,25 +29,26 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    print (event.message.text)
     # line_bot_api.reply_message(
 	# 	event.reply_token,
 	# 	TextSendMessage(text='Hello!')
 	# )
-    if event.message.text.lower == "hai":
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='Hai Juga')
-    )
-    if event.message.text.lower == "lokasi":
-        line_bot_api.reply_message(
-            event.reply_token,
-            LocationSendMessage(
-                title="Kantor Pusat",
-                address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
-                latitude=-7.452799,
-                longitude=112.714243,
-            )
-        )
+    # if event.message.text.lower == "hai":
+    #     line_bot_api.reply_message(
+    #         event.reply_token,
+    #         TextSendMessage(text='Hai Juga')
+    # )
+    # if event.message.text.lower == "lokasi":
+    #     line_bot_api.reply_message(
+    #         event.reply_token,
+    #         LocationSendMessage(
+    #             title="Kantor Pusat",
+    #             address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+    #             latitude=-7.452799,
+    #             longitude=112.714243,
+    #         )
+    #     )
 if __name__ == "__main__":
     app.run()
     #arg_parser = ArgumentParser(
