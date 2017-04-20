@@ -29,7 +29,58 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    lokasiDict = ("lokasi", "cabang", "kantor", "gerai");
     print (event.message.text)
+    for text in event.message.text.lower().split():
+        if text in lokasiDict:
+            line_bot_api.reply_message(
+                event.reply_token,
+                LocationSendMessage(
+                    title="Kantor Pusat1",
+                    address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                    latitude=-7.452799,
+                    longitude=112.714243,
+                )
+            )
+            line_bot_api.reply_message(
+                event.reply_token,
+                LocationSendMessage(
+                    title="Kantor Pusat2",
+                    address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                    latitude=-7.452799,
+                    longitude=112.714243,
+                )
+            )
+            line_bot_api.reply_message(
+                event.reply_token,
+                LocationSendMessage(
+                    title="Kantor Pusat3",
+                    address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                    latitude=-7.452799,
+                    longitude=112.714243,
+                )
+            )
+            line_bot_api.reply_message(
+                event.reply_token,
+                LocationSendMessage(
+                    title="Kantor Pusat4",
+                    address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                    latitude=-7.452799,
+                    longitude=112.714243,
+                )
+            )
+            line_bot_api.reply_message(
+                event.reply_token,
+                LocationSendMessage(
+                    title="Kantor Pusat5",
+                    address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
+                    latitude=-7.452799,
+                    longitude=112.714243,
+                )
+            )
+
+        return 0
+            
     if event.message.text.lower().find("hai") != -1:
         line_bot_api.reply_message(
             event.reply_token,
