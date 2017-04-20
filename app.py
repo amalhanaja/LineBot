@@ -45,26 +45,7 @@ def handle_message(event):
                     longitude=112.714243,
                 )
                 line_bot_api.reply_message(event.reply_token, send_location)
-        else:
-            text_message = TextSendMessage(text="Waduhh BossKu Kita belum Hadir disana BossKu tapi Tunggu kehadiran kita ya BossKu!")
-            line_bot_api.reply_message(event.reply_token, text_message)
-        
-    if event.message.text.lower().find("hai") != -1:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="Hai Juga!!!")
-        )
-    if event.message.text.lower().find("lokasi") != -1:
-        line_bot_api.reply_message(
-            event.reply_token,
-            LocationSendMessage(
-                title="Kantor Pusat",
-                address="Jl Diponegoro Ruko Graha Mutiara Delta C9, Sidoarjo, Jawa Timur",
-                latitude=-7.452799,
-                longitude=112.714243,
-            )
-        )
-
+    #
     # line_bot_api.reply_message(
 	# 	event.reply_token,
 	# 	TextSendMessage(text='Hello!')
