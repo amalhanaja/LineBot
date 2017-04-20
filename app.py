@@ -30,6 +30,12 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print (event.message.text)
+    if event.message.text.lower().find("hai") != -1:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Hai Juga!!!")
+        )
+
     # line_bot_api.reply_message(
 	# 	event.reply_token,
 	# 	TextSendMessage(text='Hello!')
